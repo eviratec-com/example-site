@@ -1,0 +1,748 @@
+--
+-- PostgreSQL database dump
+--
+
+-- Dumped from database version 14.6
+-- Dumped by pg_dump version 15.2
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET idle_in_transaction_session_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SELECT pg_catalog.set_config('search_path', '', false);
+SET check_function_bodies = false;
+SET xmloption = content;
+SET client_min_messages = warning;
+SET row_security = off;
+
+
+SET default_tablespace = '';
+
+SET default_table_access_method = heap;
+
+--
+--
+--
+
+CREATE TABLE public.attributes (
+    id integer NOT NULL,
+    label character varying(255) NOT NULL,
+    "order" integer NOT NULL
+);
+
+CREATE SEQUENCE public.attributes_id_seq
+    AS integer
+    START WITH 100000000
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+ALTER SEQUENCE public.attributes_id_seq OWNED BY public.attributes.id;
+
+--
+--
+--
+
+CREATE TABLE public.conversation_member_messages (
+    id integer NOT NULL,
+    conversation integer NOT NULL,
+    member integer NOT NULL,
+    message integer NOT NULL,
+    delivered timestamp with time zone,
+    deleted timestamp with time zone
+);
+
+
+CREATE SEQUENCE public.conversation_member_messages_id_seq
+    AS integer
+    START WITH 100000000
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+ALTER SEQUENCE public.conversation_member_messages_id_seq OWNED BY public.conversation_member_messages.id;
+
+--
+--
+--
+
+CREATE TABLE public.conversation_members (
+    id integer NOT NULL,
+    conversation integer NOT NULL,
+    member integer NOT NULL,
+    invited_by integer NOT NULL,
+    invited timestamp with time zone NOT NULL,
+    accepted timestamp with time zone
+);
+
+CREATE SEQUENCE public.conversation_members_id_seq
+    AS integer
+    START WITH 100000000
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER SEQUENCE public.conversation_members_id_seq OWNED BY public.conversation_members.id;
+
+--
+--
+--
+
+CREATE TABLE public.conversation_messages (
+    id integer NOT NULL,
+    conversation integer NOT NULL,
+    message integer NOT NULL,
+    deleted_by_author timestamp with time zone
+);
+
+CREATE SEQUENCE public.conversation_messages_id_seq
+    AS integer
+    START WITH 100000000
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+ALTER SEQUENCE public.conversation_messages_id_seq OWNED BY public.conversation_messages.id;
+
+--
+--
+--
+
+CREATE TABLE public.conversations (
+    id integer NOT NULL,
+    started_by integer NOT NULL,
+    started timestamp with time zone NOT NULL
+);
+
+CREATE SEQUENCE public.conversations_id_seq
+    AS integer
+    START WITH 100000000
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+ALTER SEQUENCE public.conversations_id_seq OWNED BY public.conversations.id;
+
+--
+--
+--
+
+CREATE TABLE public.counter_types (
+    id integer NOT NULL,
+    topic character varying(20) NOT NULL,
+    counts character varying(20) NOT NULL
+);
+
+CREATE SEQUENCE public.counter_types_id_seq
+    AS integer
+    START WITH 100000000
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+ALTER SEQUENCE public.counter_types_id_seq OWNED BY public.counter_types.id;
+
+--
+--
+--
+
+CREATE TABLE public.counters (
+    target integer NOT NULL,
+    type integer NOT NULL,
+    count integer DEFAULT 0
+);
+
+--
+--
+--
+
+CREATE TABLE public.feature_types (
+    id integer NOT NULL,
+    name character varying(255) NOT NULL
+);
+
+CREATE SEQUENCE public.feature_types_id_seq
+    AS integer
+    START WITH 100000000
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+ALTER SEQUENCE public.feature_types_id_seq OWNED BY public.feature_types.id;
+
+--
+--
+--
+
+CREATE TABLE public.features (
+    id integer NOT NULL,
+    type integer NOT NULL,
+    post integer NOT NULL,
+    added timestamp with time zone NOT NULL
+);
+
+CREATE SEQUENCE public.features_id_seq
+    AS integer
+    START WITH 100000000
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+ALTER SEQUENCE public.features_id_seq OWNED BY public.features.id;
+
+--
+--
+--
+
+CREATE TABLE public.feed_posts (
+    feed integer NOT NULL,
+    post integer NOT NULL,
+    published timestamp with time zone NOT NULL
+);
+
+--
+--
+--
+
+CREATE TABLE public.feeds (
+    id integer NOT NULL,
+    name character varying(60) NOT NULL,
+    slug character varying(100) NOT NULL,
+    created timestamp with time zone NOT NULL,
+    deleted timestamp with time zone
+);
+
+CREATE SEQUENCE public.feeds_id_seq
+    AS integer
+    START WITH 100000000
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+ALTER SEQUENCE public.feeds_id_seq OWNED BY public.feeds.id;
+
+--
+--
+--
+
+CREATE TABLE public.messages (
+    id integer NOT NULL,
+    author integer NOT NULL,
+    content text NOT NULL,
+    link character varying(255),
+    images text,
+    sent timestamp with time zone NOT NULL
+);
+
+CREATE SEQUENCE public.messages_id_seq
+    AS integer
+    START WITH 100000000
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+ALTER SEQUENCE public.messages_id_seq OWNED BY public.messages.id;
+
+--
+--
+--
+
+CREATE TABLE public.posts (
+    id integer NOT NULL,
+    author integer NOT NULL,
+    content text NOT NULL,
+    link character varying(255),
+    images text,
+    created timestamp with time zone NOT NULL,
+    deleted timestamp with time zone
+);
+
+CREATE SEQUENCE public.posts_id_seq
+    AS integer
+    START WITH 100000000
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+ALTER SEQUENCE public.posts_id_seq OWNED BY public.posts.id;
+
+--
+--
+--
+
+CREATE TABLE public.replies (
+    id integer NOT NULL,
+    post integer NOT NULL,
+    author integer NOT NULL,
+    content text NOT NULL,
+    created timestamp with time zone NOT NULL,
+    deleted timestamp with time zone
+);
+
+CREATE SEQUENCE public.replies_id_seq
+    AS integer
+    START WITH 100000000
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+ALTER SEQUENCE public.replies_id_seq OWNED BY public.replies.id;
+
+--
+--
+--
+
+CREATE TABLE public.roles (
+    id integer NOT NULL,
+    name character varying(60) NOT NULL
+);
+
+CREATE SEQUENCE public.roles_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 100000000
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+ALTER SEQUENCE public.roles_id_seq OWNED BY public.roles.id;
+
+--
+--
+--
+
+CREATE TABLE public.sessions (
+    id integer NOT NULL,
+    "user" integer NOT NULL,
+    token text NOT NULL,
+    created timestamp with time zone NOT NULL,
+    expiry timestamp with time zone,
+    renewed timestamp with time zone
+);
+
+CREATE SEQUENCE public.sessions_id_seq
+    AS integer
+    START WITH 100000000
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+ALTER SEQUENCE public.sessions_id_seq OWNED BY public.sessions.id;
+
+--
+--
+--
+
+CREATE TABLE public.user_attributes (
+    id integer NOT NULL,
+    "user" integer NOT NULL,
+    attribute integer NOT NULL,
+    value text NOT NULL,
+    updated timestamp with time zone NOT NULL,
+    hidden timestamp with time zone
+);
+
+CREATE SEQUENCE public.user_attributes_id_seq
+    AS integer
+    START WITH 100000000
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+ALTER SEQUENCE public.user_attributes_id_seq OWNED BY public.user_attributes.id;
+
+--
+--
+--
+
+CREATE TABLE public.user_feeds (
+    "user" integer NOT NULL,
+    feed integer NOT NULL,
+    role integer NOT NULL,
+    granted timestamp with time zone NOT NULL
+);
+
+--
+--
+--
+
+CREATE TABLE public.user_roles (
+    "user" integer NOT NULL,
+    role integer NOT NULL,
+    granted timestamp with time zone NOT NULL
+);
+
+--
+--
+--
+
+CREATE TABLE public.users (
+    id integer NOT NULL,
+    username character varying(60) NOT NULL,
+    password character varying(128) NOT NULL,
+    email character varying(255) NOT NULL,
+    created timestamp with time zone NOT NULL,
+    modified timestamp with time zone,
+    display_name character varying(100),
+    link character varying(255),
+    status character varying(255) DEFAULT 'UNVERIFIED'::character varying NOT NULL,
+    dob date DEFAULT '2123-04-20'::date NOT NULL
+);
+
+CREATE SEQUENCE public.users_id_seq
+    AS integer
+    START WITH 100000000
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+ALTER SEQUENCE public.users_id_seq OWNED BY public.users.id;
+
+--
+--
+--
+
+CREATE TABLE public.user_meta (
+  id integer NOT NULL,
+  "user" integer NOT NULL,
+  "key" varchar(255) NOT NULL,
+  value text NOT NULL,
+  updated timestamp with time zone NOT NULL,
+  hidden timestamp with time zone
+);
+
+CREATE SEQUENCE public.user_meta_id_seq
+  AS integer
+  START WITH 100000000
+  INCREMENT BY 1
+  NO MINVALUE
+  NO MAXVALUE
+  CACHE 1;
+
+ALTER SEQUENCE public.user_meta_id_seq OWNED BY public.user_meta.id;
+
+--
+--
+--
+
+ALTER TABLE ONLY public.attributes ALTER COLUMN id SET DEFAULT nextval('public.attributes_id_seq'::regclass);
+
+ALTER TABLE ONLY public.conversation_member_messages ALTER COLUMN id SET DEFAULT nextval('public.conversation_member_messages_id_seq'::regclass);
+
+ALTER TABLE ONLY public.conversation_members ALTER COLUMN id SET DEFAULT nextval('public.conversation_members_id_seq'::regclass);
+
+ALTER TABLE ONLY public.conversation_messages ALTER COLUMN id SET DEFAULT nextval('public.conversation_messages_id_seq'::regclass);
+
+ALTER TABLE ONLY public.conversations ALTER COLUMN id SET DEFAULT nextval('public.conversations_id_seq'::regclass);
+
+ALTER TABLE ONLY public.counter_types ALTER COLUMN id SET DEFAULT nextval('public.counter_types_id_seq'::regclass);
+
+ALTER TABLE ONLY public.feature_types ALTER COLUMN id SET DEFAULT nextval('public.feature_types_id_seq'::regclass);
+
+ALTER TABLE ONLY public.features ALTER COLUMN id SET DEFAULT nextval('public.features_id_seq'::regclass);
+
+ALTER TABLE ONLY public.feeds ALTER COLUMN id SET DEFAULT nextval('public.feeds_id_seq'::regclass);
+
+ALTER TABLE ONLY public.messages ALTER COLUMN id SET DEFAULT nextval('public.messages_id_seq'::regclass);
+
+ALTER TABLE ONLY public.posts ALTER COLUMN id SET DEFAULT nextval('public.posts_id_seq'::regclass);
+
+ALTER TABLE ONLY public.replies ALTER COLUMN id SET DEFAULT nextval('public.replies_id_seq'::regclass);
+
+ALTER TABLE ONLY public.roles ALTER COLUMN id SET DEFAULT nextval('public.roles_id_seq'::regclass);
+
+ALTER TABLE ONLY public.sessions ALTER COLUMN id SET DEFAULT nextval('public.sessions_id_seq'::regclass);
+
+ALTER TABLE ONLY public.user_attributes ALTER COLUMN id SET DEFAULT nextval('public.user_attributes_id_seq'::regclass);
+
+ALTER TABLE ONLY public.users ALTER COLUMN id SET DEFAULT nextval('public.users_id_seq'::regclass);
+
+ALTER TABLE ONLY public.user_meta ALTER COLUMN id SET DEFAULT nextval('public.user_meta_id_seq'::regclass);
+
+--
+-- Default Data
+--
+
+INSERT INTO public.attributes VALUES (100000000, 'Location', 1);
+INSERT INTO public.attributes VALUES (100000001, 'Name', 2);
+INSERT INTO public.attributes VALUES (100000002, 'Age', 3);
+INSERT INTO public.attributes VALUES (100000003, 'Sex', 4);
+INSERT INTO public.attributes VALUES (100000004, 'Orientation', 5);
+INSERT INTO public.attributes VALUES (100000005, 'Status', 6);
+INSERT INTO public.attributes VALUES (100000006, 'Personality Type', 7);
+INSERT INTO public.attributes VALUES (100000007, 'Star Sign', 8);
+
+--
+--
+--
+
+INSERT INTO public.counter_types VALUES (100000000, 'User', 'Posts');
+INSERT INTO public.counter_types VALUES (100000001, 'Feed', 'Posts');
+INSERT INTO public.counter_types VALUES (100000002, 'Post', 'Replies');
+
+--
+--
+--
+
+INSERT INTO public.feature_types VALUES (100000000, 'New');
+INSERT INTO public.feature_types VALUES (100000001, 'Featured');
+INSERT INTO public.feature_types VALUES (100000002, 'Popular');
+
+--
+--
+--
+
+INSERT INTO public.users VALUES (100000000, 'super', '$2b$10$rigAwyFvIpWiQ/QcR6mHeONIFqPN/tJTrrAu8DRHnvc/1Yl1tOo9i', 'super@localhost', '2023-04-20 00:00:00+00', NULL, 'Super', '/u/super', 'ID_VERIFIED', '2023-04-20');
+INSERT INTO public.users VALUES (100000001, 'root', '$2b$10$rigAwyFvIpWiQ/QcR6mHeONIFqPN/tJTrrAu8DRHnvc/1Yl1tOo9i', 'root@localhost', '2023-04-20 00:00:00+00', NULL, 'Root', '/u/root', 'ID_VERIFIED', '2023-04-20');
+INSERT INTO public.users VALUES (100000002, 'admin', '$2b$10$rigAwyFvIpWiQ/QcR6mHeONIFqPN/tJTrrAu8DRHnvc/1Yl1tOo9i', 'admin@localhost', '2023-04-20 00:00:00+00', NULL, 'Admin', '/u/admin', 'ID_VERIFIED', '2023-04-20');
+INSERT INTO public.users VALUES (100000003, 'support', '$2b$10$rigAwyFvIpWiQ/QcR6mHeONIFqPN/tJTrrAu8DRHnvc/1Yl1tOo9i', 'support@localhost', '2023-04-20 00:00:00+00', NULL, 'Support', '/u/support', 'ID_VERIFIED', '2023-04-20');
+
+--
+--
+--
+
+SELECT pg_catalog.setval('public.attributes_id_seq', 100000007, true);
+
+SELECT pg_catalog.setval('public.counter_types_id_seq', 100000002, true);
+
+SELECT pg_catalog.setval('public.feature_types_id_seq', 100000002, true);
+
+SELECT pg_catalog.setval('public.users_id_seq', 100000003, true);
+
+--
+-- Primary and unique keys
+--
+
+ALTER TABLE ONLY public.attributes
+    ADD CONSTRAINT attributes_pkey PRIMARY KEY (id);
+
+ALTER TABLE ONLY public.conversation_member_messages
+    ADD CONSTRAINT conversation_member_messages_pkey PRIMARY KEY (id);
+
+ALTER TABLE ONLY public.conversation_members
+    ADD CONSTRAINT conversation_members_pkey PRIMARY KEY (id);
+
+ALTER TABLE ONLY public.conversation_messages
+    ADD CONSTRAINT conversation_messages_pkey PRIMARY KEY (id);
+
+ALTER TABLE ONLY public.conversations
+    ADD CONSTRAINT conversations_pkey PRIMARY KEY (id);
+
+ALTER TABLE ONLY public.counter_types
+    ADD CONSTRAINT counter_types_pkey PRIMARY KEY (id);
+
+ALTER TABLE ONLY public.feature_types
+    ADD CONSTRAINT feature_types_pkey PRIMARY KEY (id);
+
+ALTER TABLE ONLY public.features
+    ADD CONSTRAINT features_pkey PRIMARY KEY (id);
+
+ALTER TABLE ONLY public.feed_posts
+    ADD CONSTRAINT feed_posts_pkey PRIMARY KEY (feed, post);
+
+ALTER TABLE ONLY public.feeds
+    ADD CONSTRAINT feeds_pkey PRIMARY KEY (id);
+
+ALTER TABLE ONLY public.feeds
+    ADD CONSTRAINT feeds_slug_key UNIQUE (slug);
+
+ALTER TABLE ONLY public.messages
+    ADD CONSTRAINT messages_pkey PRIMARY KEY (id);
+
+ALTER TABLE ONLY public.posts
+    ADD CONSTRAINT posts_pkey PRIMARY KEY (id);
+
+ALTER TABLE ONLY public.replies
+    ADD CONSTRAINT replies_pkey PRIMARY KEY (id);
+
+ALTER TABLE ONLY public.roles
+    ADD CONSTRAINT roles_pkey PRIMARY KEY (id);
+
+ALTER TABLE ONLY public.sessions
+    ADD CONSTRAINT sessions_pkey PRIMARY KEY (id);
+
+ALTER TABLE ONLY public.sessions
+    ADD CONSTRAINT sessions_token_key UNIQUE (token);
+
+ALTER TABLE ONLY public.user_attributes
+    ADD CONSTRAINT user_attributes_pkey PRIMARY KEY (id);
+
+ALTER TABLE ONLY public.user_attributes
+    ADD CONSTRAINT user_attributes_user_attribute_key UNIQUE ("user", attribute);
+
+ALTER TABLE ONLY public.user_feeds
+    ADD CONSTRAINT user_feeds_pkey PRIMARY KEY ("user", feed, role);
+
+ALTER TABLE ONLY public.user_roles
+    ADD CONSTRAINT user_roles_pkey PRIMARY KEY ("user", role);
+
+ALTER TABLE ONLY public.users
+    ADD CONSTRAINT users_email_key UNIQUE (email);
+
+ALTER TABLE ONLY public.users
+    ADD CONSTRAINT users_pkey PRIMARY KEY (id);
+
+ALTER TABLE ONLY public.users
+    ADD CONSTRAINT users_username_key UNIQUE (username);
+
+ALTER TABLE ONLY public.user_meta
+  ADD CONSTRAINT user_meta_pkey PRIMARY KEY (id);
+
+ALTER TABLE ONLY public.user_meta
+  ADD CONSTRAINT user_meta_user_key_key UNIQUE ("user", "key");
+
+--
+-- Indexes for performance
+--
+
+CREATE INDEX conversation_member_member ON public.conversation_members USING hash (member);
+CREATE INDEX conversation_member_invited_by ON public.conversation_members USING hash (invited_by);
+CREATE INDEX conversation_member_conversation ON public.conversation_members USING hash (conversation);
+
+CREATE INDEX conversation_member_message_m_c ON public.conversation_member_messages USING btree (conversation, member);
+CREATE INDEX conversation_member_message_member ON public.conversation_member_messages USING hash (member);
+CREATE INDEX conversation_member_message_conversation ON public.conversation_member_messages USING hash (conversation);
+
+CREATE INDEX conversation_member_message_message ON public.conversation_member_messages USING hash (message);
+
+CREATE INDEX conversation_message_message ON public.conversation_messages USING hash (message);
+CREATE INDEX conversation_message_conversation ON public.conversation_messages USING hash (conversation);
+
+CREATE INDEX conversation_started_by ON public.conversations USING hash (started_by);
+
+CREATE INDEX counter_type ON public.counters USING hash (target);
+CREATE UNIQUE INDEX counter_type_target ON public.counters USING btree (type, target);
+
+CREATE INDEX feature_post ON public.features USING hash (post);
+CREATE INDEX feature_type ON public.features USING hash (type);
+
+CREATE INDEX message_author ON public.messages USING hash (author);
+
+CREATE INDEX user_attribute_user ON public.user_attributes USING hash ("user");
+CREATE INDEX user_attribute_attribute ON public.user_attributes USING hash (attribute);
+CREATE INDEX user_attribute_user_attribute ON public.user_attributes USING btree ("user", attribute);
+
+--
+-- Foreign Keys
+--
+
+ALTER TABLE ONLY public.conversation_member_messages
+    ADD CONSTRAINT conversation_member_messages_conversation_fkey FOREIGN KEY (conversation) REFERENCES public.conversations(id);
+
+ALTER TABLE ONLY public.conversation_member_messages
+    ADD CONSTRAINT conversation_member_messages_member_fkey FOREIGN KEY (member) REFERENCES public.users(id);
+
+ALTER TABLE ONLY public.conversation_member_messages
+    ADD CONSTRAINT conversation_member_messages_message_fkey FOREIGN KEY (message) REFERENCES public.messages(id);
+
+
+
+ALTER TABLE ONLY public.conversation_members
+    ADD CONSTRAINT conversation_members_conversation_fkey FOREIGN KEY (conversation) REFERENCES public.conversations(id);
+
+ALTER TABLE ONLY public.conversation_members
+    ADD CONSTRAINT conversation_members_invited_by_fkey FOREIGN KEY (invited_by) REFERENCES public.users(id);
+
+ALTER TABLE ONLY public.conversation_members
+    ADD CONSTRAINT conversation_members_member_fkey FOREIGN KEY (member) REFERENCES public.users(id);
+
+
+
+ALTER TABLE ONLY public.conversation_messages
+    ADD CONSTRAINT conversation_messages_conversation_fkey FOREIGN KEY (conversation) REFERENCES public.conversations(id);
+
+ALTER TABLE ONLY public.conversation_messages
+    ADD CONSTRAINT conversation_messages_message_fkey FOREIGN KEY (message) REFERENCES public.messages(id);
+
+
+
+ALTER TABLE ONLY public.conversations
+    ADD CONSTRAINT conversations_started_by_fkey FOREIGN KEY (started_by) REFERENCES public.users(id);
+
+
+
+ALTER TABLE ONLY public.features
+    ADD CONSTRAINT counters_type_fkey FOREIGN KEY (type) REFERENCES public.counter_types(id);
+
+ALTER TABLE ONLY public.features
+    ADD CONSTRAINT features_post_fkey FOREIGN KEY (post) REFERENCES public.posts(id);
+
+ALTER TABLE ONLY public.features
+    ADD CONSTRAINT features_type_fkey FOREIGN KEY (type) REFERENCES public.feature_types(id);
+
+
+
+ALTER TABLE ONLY public.feed_posts
+    ADD CONSTRAINT feed_posts_feed_fkey FOREIGN KEY (feed) REFERENCES public.feeds(id);
+
+ALTER TABLE ONLY public.feed_posts
+    ADD CONSTRAINT feed_posts_post_fkey FOREIGN KEY (post) REFERENCES public.posts(id);
+
+ALTER TABLE ONLY public.messages
+    ADD CONSTRAINT messages_author_fkey FOREIGN KEY (author) REFERENCES public.users(id);
+
+
+
+ALTER TABLE ONLY public.posts
+    ADD CONSTRAINT posts_author_fkey FOREIGN KEY (author) REFERENCES public.users(id);
+
+
+
+ALTER TABLE ONLY public.replies
+    ADD CONSTRAINT replies_author_fkey FOREIGN KEY (author) REFERENCES public.users(id);
+
+ALTER TABLE ONLY public.replies
+    ADD CONSTRAINT replies_post_fkey FOREIGN KEY (post) REFERENCES public.posts(id);
+
+
+
+ALTER TABLE ONLY public.sessions
+    ADD CONSTRAINT sessions_user_fkey FOREIGN KEY ("user") REFERENCES public.users(id);
+
+
+
+ALTER TABLE ONLY public.user_attributes
+    ADD CONSTRAINT user_attributes_attribute_fkey FOREIGN KEY (attribute) REFERENCES public.attributes(id);
+
+ALTER TABLE ONLY public.user_attributes
+    ADD CONSTRAINT user_attributes_user_fkey FOREIGN KEY ("user") REFERENCES public.users(id);
+
+
+
+ALTER TABLE ONLY public.user_feeds
+    ADD CONSTRAINT user_feeds_feed_fkey FOREIGN KEY (feed) REFERENCES public.feeds(id);
+
+ALTER TABLE ONLY public.user_feeds
+    ADD CONSTRAINT user_feeds_role_fkey FOREIGN KEY (role) REFERENCES public.roles(id);
+
+ALTER TABLE ONLY public.user_feeds
+    ADD CONSTRAINT user_feeds_user_fkey FOREIGN KEY ("user") REFERENCES public.users(id);
+
+
+
+ALTER TABLE ONLY public.user_roles
+    ADD CONSTRAINT user_roles_role_fkey FOREIGN KEY (role) REFERENCES public.roles(id);
+
+ALTER TABLE ONLY public.user_roles
+    ADD CONSTRAINT user_roles_user_fkey FOREIGN KEY ("user") REFERENCES public.users(id);
+
+--
+-- PostgreSQL database dump complete
+--

@@ -1,0 +1,12 @@
+delete from "counters" where "type" = 100000001;
+INSERT INTO "counters" ("count", "target", "type")
+SELECT
+	COUNT("feed_posts"."post") AS "_count",
+		"feeds"."id" AS "_target",
+		100000001 AS "_type"
+FROM "feeds"
+LEFT JOIN "feed_posts"
+	ON "feed_posts"."feed" = "feeds"."id"
+	left JOIN "posts" ON "posts"."id" = "feed_posts"."post"
+WHERE "posts"."deleted" IS NULL
+GROUP BY "feeds"."id";
