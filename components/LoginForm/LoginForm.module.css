@@ -1,0 +1,105 @@
+._ {
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  width: 285px;
+  background-color: transparent;
+}
+
+._ .formWrapper {
+  color: rgb(var(--foreground-rgb));
+  padding: 1.5rem;
+  border-radius: 2px;
+}
+
+._ .formWrapper form {
+  display: flex;
+  flex-direction: column;
+}
+
+._ .formWrapper form .inputField {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+  align-items: stretch;
+  justify-content: stretch;
+}
+
+._ .formWrapper form .inputField input,
+._ .formWrapper form .inputField input:focus,
+._ .formWrapper form .inputField input:active {
+  outline: none;
+  font-size: 1rem;
+}
+
+._ .formWrapper form .inputField label {
+  /* color: rgba(102, 0, 204, 1); */
+  color: var(--input-label-color);
+}
+
+._ .formWrapper form .inputField input {
+  border: var(--input-border-width) solid rgba(var(--input-border-rgba));
+  background-color: rgba(var(--input-background-rgba));
+  line-height: 2rem;
+  padding: 0 1rem;
+  border-radius: 5px;
+  box-shadow: var(--input-box-shadow);
+  text-align: left;
+  font-weight: 300;
+}
+
+._ .formWrapper form .inputField input:hover,
+._ .formWrapper form .inputField input:focus,
+._ .formWrapper form .inputField input:active {
+  border-color: orangered;
+}
+
+._ .formWrapper form .submitButtonWrapper {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+}
+
+._ .formWrapper form .submitButtonWrapper button {
+  border: 0px;
+  border-radius: 5px;
+  line-height: 2rem;
+  background: linear-gradient(
+    to bottom right,
+    rgba(var(--button-start-rgb),1) 0%,
+    rgba(var(--button-end-rgb),1) 100%
+  );
+  cursor: pointer;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 200;
+  line-height: 2.4rem;
+}
+
+._ .loginResult {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  font-weight: 200;
+}
+
+._ .loginResult > * {
+  margin-right: 0.5rem;
+  margin-left: 0.5rem;
+}
+
+._ .loginResult p.loginSuccess {
+
+}
+
+._ .loginResult p.loginError {
+
+}
+
+/* Mobile */
+@media screen and (max-width: 700px) {
+  ._ {
+    width: 100%;
+  }
+}

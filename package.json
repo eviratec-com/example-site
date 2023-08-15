@@ -1,0 +1,31 @@
+{
+  "name": "example-site",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@azure/communication-email": "1.0.0",
+    "@stripe/react-stripe-js": "2.1.0",
+    "@stripe/stripe-js": "1.54.0",
+    "bcrypt": "5.1.0",
+    "cookie": "0.5.0",
+    "country-region-data": "2.7.0",
+    "eslint": "8.42.0",
+    "eslint-config-next": "13.4.4",
+    "next": "13.4.4",
+    "pg": "8.11.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "stripe": "12.8.0",
+    "uuid": "9.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "20.2.5",
+    "@types/react": "18.2.9"
+  }
+}

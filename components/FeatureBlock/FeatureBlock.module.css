@@ -1,0 +1,27 @@
+._ {
+  background-color: transparent;
+  display: flex;
+  flex-direction: row;
+  margin: 0 -1rem;
+  flex-wrap: wrap;
+}
+
+._ .cardWrapper {
+  display: flex;
+  width: 33.33%;
+  align-items: stretch;
+  justify-content: stretch;
+  min-height: 100px;
+  aspect-ratio: 16/9;
+}
+
+/* Mobile */
+@media screen and (max-width: 700px) {
+  ._ {
+    margin: 0 -0.5rem;
+  }
+
+  ._ .cardWrapper {
+    width: 50%;
+  }
+}

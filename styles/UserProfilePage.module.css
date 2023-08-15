@@ -1,0 +1,143 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 6rem;
+  min-height: 100vh;
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+.main .profileCardWrapper {
+  width: 600px;
+  border-radius: 3px;
+  box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.25);
+  overflow: hidden;
+  margin-top: 3rem;
+}
+
+.postFormWrapper,
+.posts {
+  margin-top: 3rem;
+}
+
+.postFormWrapper {
+  background-color: rgba(var(--background-end-rgb), 1);
+  color: rgb(var(--foreground-rgb));
+  padding: 0;
+  border: 1px solid rgba(var(--foreground-rgb), 0.2);
+  box-shadow: 0px 1px 25px 0px rgba(0,0,0,0.25);
+  width: 800px;
+}
+
+.posts {
+  display: flex;
+  flex-direction: column;
+  width: 800px;
+}
+
+.postWrapper {
+  width: 100%;
+}
+
+.pageInfo {
+  margin-top: 1rem;
+  font-weight: 200;
+}
+
+p.sendMessage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 4rem;
+  font-size: 0.9rem;
+  font-weight: 200;
+}
+
+/* p.sendMessage button {
+  margin-bottom: 0.5rem;
+  height: 2rem;
+  padding: 0 0.5rem;
+  font-size: 1.1rem;
+  font-weight: 300;
+  border: 2px solid;
+  border-radius: 3px;
+} */
+
+p.sendMessage button {
+  border: 0px;
+  border-radius: 5px;
+  background: linear-gradient(to bottom right, rgba(102, 0, 204,1) 0%, rgba(77,0,153,1) 100%);
+  cursor: pointer;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 200;
+  line-height: 2.4rem;
+  padding: 0 1rem;
+  margin-bottom: 1rem;
+}
+
+div.verificationButtons {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: row;
+}
+
+div.verificationButtons .verifyButton {
+  margin: 0.5rem;
+}
+
+/* Mobile */
+@media screen and (max-width: 700px) {
+  .main {
+    padding: 2rem 0rem 2rem;
+  }
+
+  .main .profileCardWrapper {
+    width: calc(100vw - 1.5rem);
+  }
+
+  .postFormWrapper,
+  .posts {
+    margin-top: 1rem;
+    width: 100%;
+  }
+
+  .postFormWrapper {
+    border: 0;
+  }
+
+  p.sendMessage {
+    padding: 0 0.75rem;
+  }
+
+  p.sendMessage,
+  p.sendMessage button {
+    width: 100%;
+  }
+
+  p.sendMessage button {
+
+  }
+
+  div.verificationButtons {
+    flex-direction: column;
+    width: calc(100vw - 0.5rem);
+  }
+
+  div.verificationButtons .verifyButton {
+    width: auto;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .main {
+
+  }
+}

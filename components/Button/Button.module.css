@@ -1,0 +1,46 @@
+._ {
+  border: 0px;
+  border-radius: 5px;
+  line-height: 2rem;
+  background: linear-gradient(
+    to bottom right,
+    rgba(var(--button-start-rgb),1) 0%,
+    rgba(var(--button-end-rgb),1) 100%
+  );
+  cursor: pointer;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 200;
+  line-height: 2.4rem;
+  padding: 0 1.25rem;
+  text-align: center;
+  display: inline-block;
+}
+
+/* Light mode only */
+@media (prefers-color-scheme: light) {
+  ._ {
+
+  }
+}
+
+/* dark mode only */
+@media (prefers-color-scheme: dark) {
+  ._ {
+
+  }
+}
+
+/* Mobile */
+@media screen and (max-width: 700px) {
+  ._ {
+
+  }
+}
+
+/* landscape mobile */
+@media screen and (max-width: 700px) and (orientation: landscape) {
+  ._ {
+
+  }
+}

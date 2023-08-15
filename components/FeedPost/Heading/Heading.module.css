@@ -1,0 +1,14 @@
+._ {
+
+}
+
+._ span.noText {
+  color: rgba(var(--foreground-rgb), 0.5);
+}
+
+/* Mobile */
+@media screen and (max-width: 700px) {
+  ._ {
+
+  }
+}

@@ -1,0 +1,331 @@
+._ {
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+}
+
+._ .formWrapper {
+  color: rgb(var(--foreground-rgb));
+  padding: 1.5rem;
+  border-radius: 2px;
+}
+
+._ .formWrapper table.orderSummary {
+
+}
+
+._ .formWrapper table.orderSummary tr {
+
+}
+
+._ .formWrapper table.orderSummary thead tr td {
+  font-weight: 500;
+  border-bottom: 1px solid var(--input-label-color);
+  color: var(--input-label-color);
+  font-weight: 200;
+  font-size: 0.9rem;
+}
+
+._ .formWrapper table.orderSummary thead tr td:nth-of-type(2) {
+  text-align: right;
+}
+
+._ .formWrapper table.orderSummary tbody tr td {
+  font-weight: 300;
+  vertical-align: top;
+  padding-top: 0.5rem;
+}
+
+._ .formWrapper table.orderSummary tbody tr td:nth-of-type(2) {
+  text-align: right;
+}
+
+._ .formWrapper table.orderSummary tbody tr td span.subText {
+  display: block;
+  font-size: 0.8rem;
+  color: rgba(var(--foreground-rgb), 0.5);
+}
+
+._ .formWrapper form p.orderSummaryText,
+._ .formWrapper form p.orderSummaryTextSmall {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  font-weight: 300;
+}
+
+._ .formWrapper form p.orderSummaryTextSmall {
+  font-size: 0.8rem;
+  color: rgba(var(--foreground-rgb), 0.8);
+}
+
+._ .formWrapper form p.orderSummaryText a,
+._ .formWrapper form p.orderSummaryTextSmall a {
+  color: rgba(var(--link-rgb), 1);
+}
+
+._ .formWrapper form {
+  display: flex;
+  flex-direction: row;
+}
+
+._ .formWrapper form h2 {
+  display: flex;
+  color: rgba(var(--link-alt-rgb), 0.2);
+  border-bottom: 2px solid;
+  margin-bottom: 1rem;
+  font-weight: 200;
+}
+
+._ .formWrapper form section.accountInfo,
+._ .formWrapper form section.siteInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  align-items: stretch;
+  width: 385px;
+}
+
+._ .formWrapper form section.accountInfo {
+  margin-right: 2rem;
+}
+
+._ .formWrapper form section.siteInfo {
+
+}
+
+._ .formWrapper form .inputField {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+  align-items: stretch;
+  justify-content: stretch;
+}
+
+._ .formWrapper form .inputField div.urlPicker {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: stretch;
+}
+
+._ .formWrapper form .inputField div.urlPicker div.urlPickerInput,
+._ .formWrapper form .inputField div.urlPicker span.urlPickerProtocol {
+  margin-right: 0.5rem;
+}
+
+._ .formWrapper form .inputField div.urlPicker span.urlPickerProtocol {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  font-weight: 200;
+}
+
+._ .formWrapper form .inputField div.urlPicker div.urlPickerInput {
+  display: flex;
+  flex: 5;
+}
+
+._ .formWrapper form .inputField div.urlPicker div.urlPickerInput input {
+  width: 100%;
+}
+
+._ .formWrapper form .inputField div.urlPicker div.urlPickerDomain {
+  display: flex;
+}
+
+._ .formWrapper form .inputField div.urlPicker {
+
+}
+
+._ .formWrapper form .inputField select {
+  padding: 0;
+  font-size: 1rem;
+  font-weight: 200;
+  height: 2rem;
+  box-sizing: content-box;
+}
+
+._ .formWrapper form .inputField input,
+._ .formWrapper form .inputField input:focus,
+._ .formWrapper form .inputField input:active {
+  outline: none;
+  font-size: 1rem;
+  position: relative;
+}
+
+._ .formWrapper form .inputField input:hover,
+._ .formWrapper form .inputField input:focus,
+._ .formWrapper form .inputField input:active,
+._ .formWrapper form .inputField select:hover,
+._ .formWrapper form .inputField select:focus,
+._ .formWrapper form .inputField select:active {
+  outline: none;
+  border-color: orangered;
+}
+
+._ .formWrapper form .inputField label {
+  /* color: rgba(102, 0, 204, 1); */
+  color: var(--input-label-color);
+  font-weight: 200;
+}
+
+._ .formWrapper form .inputField input,
+._ .formWrapper form .inputField select {
+  border: var(--input-border-width) solid rgba(var(--input-border-rgba));
+  background-color: rgba(var(--input-background-rgba));
+  line-height: 2rem;
+  padding: 0 1rem;
+  border-radius: 5px;
+  box-shadow: var(--input-box-shadow);
+  text-align: left;
+  font-weight: 300;
+}
+
+._ .formWrapper form .inputField p.fieldSuccess,
+._ .formWrapper form .tosAcceptWrapper p.fieldSuccess {
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: green;
+}
+
+._ .formWrapper form .inputField p.fieldError,
+._ .formWrapper form .tosAcceptWrapper p.fieldError {
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: red;
+}
+
+._ .formWrapper form .inputField p.fieldError ul,
+._ .formWrapper form .tosAcceptWrapper p.fieldError ul {
+  padding-left: 1rem;
+}
+
+._ .formWrapper form .tosAcceptWrapper {
+  font-weight: 200;
+}
+
+._ .formWrapper form .tosAcceptWrapper label {
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+._ .formWrapper form .tosAcceptWrapper label input[type=checkbox] {
+  margin-right: 0.35rem;
+  height: 18px;
+  width: 18px;
+  vertical-align: text-bottom;
+}
+
+._ .formWrapper form .tosAcceptWrapper label a {
+  color: rgb(var(--link-rgb));
+  text-decoration: underline;
+  margin-left: 0.35rem;
+  margin-right: 0.35rem;
+}
+
+._ .formWrapper form .submitButtonWrapper {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+}
+
+._ .formWrapper form .submitButtonWrapper button {
+  border: 0px;
+  border-radius: 5px;
+  line-height: 2rem;
+  background: linear-gradient(
+    to bottom right,
+    rgba(var(--button-start-rgb),1) 0%,
+    rgba(var(--button-end-rgb),1) 100%
+  );
+  cursor: pointer;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 200;
+  line-height: 2.4rem;
+}
+
+.formWrapper form div.inputField div.geoAreaInput {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.formWrapper form div.inputField div.geoAreaInput p {
+  white-space: wrap;
+}
+
+.formWrapper form div.inputField div.geoAreaInput div.geoCityInput {
+  display: flex;
+  flex-direction: column;
+  width: 49%;
+}
+
+.formWrapper form div.inputField div.geoAreaInput div.geoStateInput {
+  display: flex;
+  flex-direction: column;
+  width: 49%;
+}
+
+.formWrapper form div.inputField div.geoAreaInput div.geoCountryInput {
+  display: flex;
+  flex-direction: column;
+  width: 58%;
+}
+
+.formWrapper form div.inputField div.geoAreaInput div.geoZipInput {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+}
+
+._ .loginResult {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  font-weight: 200;
+}
+
+._ .loginResult > * {
+  margin-right: 0.5rem;
+  margin-left: 0.5rem;
+}
+
+._ .loginResult p.loginSuccess {
+
+}
+
+._ .loginResult p.loginError {
+
+}
+
+/* Mobile */
+@media screen and (max-width: 700px) {
+  ._ {
+    width: 100%;
+  }
+
+  ._ .formWrapper form .inputField p.fieldSuccess,
+  ._ .formWrapper form .tosAcceptWrapper p.fieldSuccess {
+    color: lightgreen;
+  }
+
+  ._ .formWrapper form {
+    flex-direction: column;
+  }
+
+  ._ .formWrapper form section.accountInfo,
+  ._ .formWrapper form section.siteInfo {
+    width: auto;
+  }
+
+  ._ .formWrapper form section.accountInfo {
+    margin-right: 0;
+  }
+
+  ._ .formWrapper form h2 {
+    display: flex;
+  }
+}

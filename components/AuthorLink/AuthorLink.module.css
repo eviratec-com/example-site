@@ -1,0 +1,17 @@
+._ {
+  display: inline-block;
+  font-style: normal;
+}
+
+._ a {
+  font-weight: 300;
+  text-decoration: underline;
+  color: rgba(var(--link-rgb),1);
+}
+
+/* Mobile */
+@media screen and (max-width: 700px) {
+  ._ {
+
+  }
+}

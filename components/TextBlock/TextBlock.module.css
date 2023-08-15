@@ -1,0 +1,36 @@
+._ {
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  font-size: 4vh;
+  font-weight: 200;
+  text-align: left;
+}
+
+._ p,
+._ ul {
+  margin-bottom: 2rem;
+}
+
+._ p a {
+  color: rgba(var(--link-rgb),1);
+  font-weight: 400;
+  text-decoration: underline;
+}
+
+._ ul {
+  padding-left: 2rem;
+}
+
+._ h3 {
+  margin-bottom: 1rem;
+  font-weight: 300;
+  font-size: 2rem;
+}
+
+/* Mobile */
+@media screen and (max-width: 700px) {
+  ._ {
+    font-size: 1.2rem;
+  }
+}

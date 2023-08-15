@@ -1,0 +1,122 @@
+._ {
+  display: flex;
+  flex-direction: row;
+  padding: 0.5rem 1rem;
+}
+
+._:hover {
+  background-color: rgba(var(--foreground-rgb), 0.1);
+}
+
+._.editing {
+  padding: 0.35rem;
+}
+
+._ div.selectWrapper {
+  display: flex;
+}
+
+._ div.inputWrapper {
+  display: flex;
+  flex: 1;
+  margin: 0 0.25rem;
+}
+
+._ select.attributeSelect {
+
+}
+
+._ select.attributeSelect,
+._ input.newValue {
+  background-color: rgb(var(--background-end-rgb));
+  border: 1px solid rgba(var(--foreground-rgb), 0.35);
+  border-radius: 3px;
+  padding: 0.15rem;
+  font-size: 16px;
+  font-weight: 200;
+  line-height: 1;
+}
+
+._ input.newValue {
+  background-color: rgb(var(--background-end-rgb));
+  width: 100%;
+  margin: 0 0.25rem;
+  text-align: right;
+  padding: 0.15rem 0.25rem 0.15rem 0.15rem;
+}
+
+
+._ span.label {
+  flex: 1;
+  display: flex;
+  color: rgba(var(--foreground-rgb), 0.5);
+  font-size: 0.8rem;
+}
+
+._ span.value {
+  display: flex;
+}
+
+._ span.editButton,
+._ span.saveButton,
+._ span.cancelButton {
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  text-decoration: underline;
+  color: rgb(var(--link-rgb));
+  font-size: 0.8rem;
+  font-weight: 300;
+}
+
+._ span.saveButton {
+  border: 0px;
+  border-radius: 5px;
+  background: linear-gradient(to bottom right, rgba(102, 0, 204,1) 0%, rgba(77,0,153,1) 100%);
+  cursor: pointer;
+  color: #fff;
+  text-decoration: none;
+  padding: 0 0.5rem;
+  justify-content: center;
+}
+
+._ span.cancelButton {
+  margin-left: 0.5rem;
+}
+
+._ span.editButton {
+  display: none;
+  margin-left: 0.5rem;
+}
+
+._:hover span.editButton {
+  display: flex;
+}
+
+/* Light mode only */
+@media (prefers-color-scheme: light) {
+  ._ {
+
+  }
+}
+
+/* dark mode only */
+@media (prefers-color-scheme: dark) {
+  ._ {
+
+  }
+}
+
+/* Mobile */
+@media screen and (max-width: 700px) {
+  ._ {
+
+  }
+}
+
+/* landscape mobile */
+@media screen and (max-width: 700px) and (orientation: landscape) {
+  ._ {
+
+  }
+}

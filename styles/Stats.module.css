@@ -1,0 +1,88 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 6rem;
+  min-height: 100vh;
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+  position: relative;
+  z-index: 100;
+}
+
+.main .stats ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.main .stats ul li {
+  display: flex;
+  width: 30%;
+  aspect-ratio: 4/3;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: rgb(var(--link-alt-rgb));
+  box-shadow: 0px 0px 5px 1px rgba(var(--link-alt-rgb),0.5), inset 0px 0px 5px 1px rgba(var(--link-alt-rgb),0.5);
+  margin: 0.5rem;
+  border: 2px solid;
+  border-radius: 5px;
+  padding: 1rem 0;
+  background: linear-gradient(to top, rgba(var(--link-alt-rgb), 0.05) 0%, rgba(var(--link-alt-rgb), 0.1) 100%)
+}
+
+.main .stats ul li span.label {
+  font-size: 0.9rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1;
+}
+
+.main .stats ul li span.count {
+  font-size: 3rem;
+  font-weight: 400;
+  line-height: 1;
+  color: rgb(var(--foreground-rgb));
+}
+
+.main .stats ul li span.countToday {
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+.main .stats ul li span.countYesterday {
+  font-size: 1rem;
+  font-weight: 200;
+}
+
+/* Mobile */
+@media screen and (max-width: 700px) {
+  .main {
+    padding: 2rem 1rem 2rem;
+  }
+
+  .main .stats ul {
+    justify-content: space-around;
+    margin-top: -1rem;
+  }
+
+  .main .stats ul li {
+    width: 45%;
+    aspect-ratio: 1;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .main {
+
+  }
+}

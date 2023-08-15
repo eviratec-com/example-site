@@ -1,0 +1,418 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+  padding: 6rem;
+  min-height: 100vh;
+  background: rgb(var(--background-end-rgb));
+}
+
+.main section.section {
+  margin-top: 5rem;
+}
+
+.main div.dblSection {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+}
+
+.main div.dblSection.reverse {
+  flex-flow: row-reverse;
+}
+
+.main div.dblSection.reverse section.section {
+  text-align: right;
+  justify-content: flex-end;
+}
+
+.main div.dblSection > section {
+  display: flex;
+  flex: 1;
+}
+
+.main div.dblSection > section:last-of-type {
+  margin-left: 2vw;
+}
+
+.main div.dblSection.reverse > section:last-of-type {
+  margin-left: 0;
+  margin-right: 2vw;
+}
+
+.main div.dblSection > section:first-of-type {
+
+}
+
+.main div.dblSection.reverse > section:first-of-type {
+  margin-right: 2vw;
+}
+
+.main .section.imgSection,
+.main .section.desktopImgSection {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.main .section.imgSection > * {
+  display: flex;
+  width: 30%;
+  box-shadow: 0px 1px 2px 1px rgba(0,0,0,0.1);
+  border-radius: 6px;
+}
+
+.main .section.imgSection > figure:nth-of-type(2) {
+  display: flex;
+  width: 36%;
+  margin: 0 2%;
+}
+
+.main .section.desktopImgSection > * {
+  display: flex;
+  width: 100%;
+  box-shadow: 0px 1px 2px 1px rgba(0,0,0,0.1);
+  border-radius: 6px;
+}
+
+.main h1,
+.main h2,
+.main h3,
+.main h4 {
+  line-height: 1;
+}
+
+.main h1,
+.main h2 {
+
+}
+
+.main figure.desktopScreenshot {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  position: relative;
+  float: right;
+}
+
+.main figure.desktopScreenshot div.imgWrapper {
+  position: relative;
+  display: flex;
+  aspect-ratio: 16/9;
+  width: 100%;
+  box-shadow: 0px 1px 2px 1px rgba(0,0,0,0.1);
+  overflow: hidden;
+  border-radius: 6px;
+}
+
+.main figure.mobileScreenshot {
+  display: flex;
+  flex-direction: column;
+  width: 20vw;
+  position: relative;
+}
+
+.main figure.mobileScreenshot div.imgWrapper {
+  position: relative;
+  display: flex;
+  aspect-ratio: 9/16;
+  box-shadow: 0px 1px 2px 1px rgba(0,0,0,0.1);
+  overflow: hidden;
+  border-radius: 6px;
+}
+
+.main figure figcaption {
+  line-height: 1.1;
+  font-size: 0.85rem;
+  font-weight: 200;
+  text-align: center;
+  padding: 0.5rem;
+  color: rgba(var(--foreground-rgb), 0.5);
+}
+
+.main h1 {
+  font-size: 3rem;
+  margin-top: 3rem;
+  font-weight: 300;
+  text-align: center;
+}
+
+.main h2 {
+  margin-top: 2rem;
+}
+
+.main .section .twoCol {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.main .section.featuresSection {
+  margin-bottom: 5rem;
+  margin-top: 3rem;
+}
+
+.main .section .plans {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 0;
+}
+
+.main .section .plans .planWrapper {
+  width: 25%;
+  box-sizing: border-box;
+  padding: 0 0.5rem;
+}
+
+.main .section .plans .plan {
+  position: relative;
+  background-color: rgb(var(--background-end-rgb));
+  /* border: 1px solid rgba(var(--foreground-rgb), 0.1); */
+  box-shadow: 0 0 2px 1px rgba(var(--foreground-rgb), 0.1);
+  border-radius: 6px;
+  padding: 1.5rem 1rem 1.3rem;
+  border-top: 3px solid;
+  display: flex;
+  flex-direction: column;
+}
+
+.main .section .plans .plan .price {
+  display: flex;
+  font-size: 1.3rem;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 1.1rem;
+  right: 1.1rem;
+  line-height: 1;
+}
+
+.main .section .plans .plan ul li::before {
+  content: '> ';
+  font-weight: 500;
+  color: rgba(var(--link-alt-rgb));
+}
+
+.main .section .plans .plan ul {
+  list-style-type: none;
+  padding-left: 0.5rem;
+}
+
+.main .section .plans .plan .ctaBtn {
+  margin-top: 2rem;
+}
+
+.main .section .plans .plan .price span:nth-of-type(1) {
+  font-size: 2rem;
+  font-weight: 400;
+  color: rgba(var(--link-rgb), 1);
+}
+
+.main .section .plans .plan .price span:nth-of-type(2) {
+}
+
+.main .section .plans .plan .price span:nth-of-type(3) {
+  font-size: 1rem;
+  color: rgba(var(--foreground-rgb),0.5);
+}
+
+.main .section .plans .plan h3 {
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.main .section .plans .plan ul {
+  margin-bottom: 0;
+}
+
+.main .section .plans .plan ul li:last-of-type {
+  margin-bottom: 0;
+}
+
+.main ul {
+  margin-bottom: 3rem;
+}
+
+.main ul li {
+  line-height: 1;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.main ul li span {
+  font-size: 1rem;
+  color: rgba(var(--foreground-rgb), 0.5);
+}
+
+.main .section .twoCol > .col {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.main .section .ctaBtn,
+.main .section p .ctaBtn {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 200;
+  font-size: 1.2rem;
+}
+
+.section p {
+  font-weight: 200;
+}
+
+.section h2 {
+  margin-bottom: 1.5rem;
+  line-height: 1;
+  font-weight: 300;
+  font-size: 2.5rem;
+}
+
+.section h3 {
+  margin-bottom: 1rem;
+  font-weight: 300;
+  font-size: 2rem;
+}
+
+.main .section .priceAsterisk {
+  text-align: center;
+  font-size: 1.1rem;
+  color: rgba(var(--foreground-rgb), 0.5);
+}
+
+.main .section .col p.smallText {
+  font-size: 1.2rem;
+}
+
+/* Mobile */
+@media screen and (min-width: 701px) {
+  .main .section .plans .plan {
+    height: 100%;
+    align-items: stretch;
+    justify-content: stretch;
+  }
+
+  .main .section .plans .plan .spacer {
+    display: flex;
+    flex: 1;
+  }
+}
+
+/* Mobile */
+@media screen and (max-width: 700px) {
+  .main {
+    padding: 2rem 1rem 2rem;
+  }
+
+  .main section.section {
+    margin-top: 3rem;
+  }
+
+  .main .section h2,
+  .main .section h3 {
+
+  }
+
+  .main .section .plans {
+    flex-direction: column;
+  }
+
+  .main .section .plans .planWrapper {
+    width: auto;
+    padding: 0.5rem 0;
+  }
+
+  .main div.dblSection {
+    margin-top: 4rem;
+    margin-bottom: 0;
+    flex-direction: column;
+    flex-basis: reverse;
+  }
+
+  .main div.dblSection.reverse {
+    flex-direction: column;
+    margin-top: 3rem;
+  }
+
+  .main div.dblSection > * {
+    margin-top: 0;
+    margin-bottom: 3rem;
+  }
+
+  .section {
+
+  }
+
+  .main div.dblSection section.section,
+  .main div.dblSection.reverse section.section {
+    text-align: center;
+  }
+
+  .section h2 {
+    font-size: 2.5rem;
+    text-align: left;
+    margin-bottom: 1rem;
+    margin-top: 0;
+  }
+
+  .section h3 {
+    font-size: 1.5rem;
+    text-align: left;
+  }
+
+  .section.contact {
+    font-size: 1.2rem;
+  }
+
+  .main .section .twoCol {
+    flex-direction: column;
+    margin-top: 0;
+  }
+
+  .main .section .twoCol > .col {
+    width: 100%;
+  }
+
+  .main .section .twoCol > .col h3,
+  .main .section .twoCol > .col p {
+    text-align: left;
+  }
+
+  .main .section .twoCol > .col ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: left;
+  }
+
+  .main .section.featuresSection {
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+
+  .main .section h2 {
+    margin-bottom: 2rem;
+  }
+
+  .main .section .twoCol .col .plan {
+    margin-bottom: 1.5rem;
+  }
+
+  .main .section .twoCol .col .plan h3,
+  .main .section .twoCol .col .plan p,
+  .main .section .twoCol .col .plan ul {
+    text-align: left;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .main {
+
+  }
+}

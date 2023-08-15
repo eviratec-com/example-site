@@ -1,0 +1,50 @@
+._ {
+  background-color: transparent;
+  font-weight: 300;
+}
+
+.new {
+  color: limegreen;
+}
+
+.emailVerified {
+  color: limegreen;
+}
+
+.idVerified {
+  color: mediumpurple;
+  font-weight: 400;
+}
+
+.admin {
+  color: orange;
+  font-weight: 400;
+}
+
+/* Light mode only */
+@media (prefers-color-scheme: light) {
+  ._ {
+
+  }
+}
+
+/* dark mode only */
+@media (prefers-color-scheme: dark) {
+  ._ {
+
+  }
+}
+
+/* Mobile */
+@media screen and (max-width: 700px) {
+  ._ {
+
+  }
+}
+
+/* landscape mobile */
+@media screen and (max-width: 700px) and (orientation: landscape) {
+  ._ {
+
+  }
+}

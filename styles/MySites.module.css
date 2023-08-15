@@ -1,0 +1,129 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 6rem;
+  min-height: 100vh;
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+.main .tools {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+  width: 300px;
+}
+
+.main .tools h2 {
+  font-weight: 200;
+  font-size: 1.4rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.main .tools ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+}
+
+.main .intro {
+  margin-bottom: 2rem;
+}
+
+.main .intro p {
+  font-weight: 300;
+}
+
+.main .tools .accountBtn {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.main .tools ul li:last-of-type .accountBtn {
+  margin-bottom: 0;
+}
+
+.main .site {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-weight: 300;
+  background-color: rgba(var(--background-end-rgb), 1);
+  border-radius: 6px;
+  box-shadow: 0px 1px 1px rgba(0,0,0,0.15);
+  padding: 1rem 0.75rem;
+  width: 400px;
+  line-height: 1;
+  margin-top: 2rem;
+}
+
+.main .site header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+.main .site .body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main .site .siteStatus {
+  font-size: 0.9rem;
+}
+
+.main .site .siteName {
+  font-weight: 400;
+  font-size: 1.2rem;
+}
+
+.main .site .siteFqdn {
+  color: rgba(var(--foreground-rgb), 0.5);
+  font-size: 0.85rem;
+  margin: 0.25rem 0 0;
+}
+
+.main .site .expected {
+  color: rgba(var(--foreground-rgb), 0.5);
+  font-size: 0.75rem;
+  margin: 1rem 0;
+}
+
+.main .site > div {
+  margin: 0 0.5rem;
+  text-align: center;
+}
+
+/* Mobile */
+@media screen and (max-width: 700px) {
+  .main {
+    padding: 2rem 1rem 2rem;
+  }
+
+  .main .site {
+    margin-top: 2rem;
+    width: 100%;
+  }
+
+  .main .tools {
+    width: 100%;
+  }
+
+}
+
+@media (prefers-color-scheme: dark) {
+  .main {
+
+  }
+}

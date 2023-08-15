@@ -1,0 +1,94 @@
+._ {
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: stretch;
+  width: 100%;
+  border-top: 4px solid rgb(var(--link-rgb));
+}
+
+._ form {
+  flex: 1;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: stretch;
+}
+
+._ form div.postFields {
+  flex: 1;
+  background-color: transparent;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: stretch;
+  padding: 0.8rem 1rem;
+}
+
+._ form div.postFields textarea {
+  flex: 1;
+  display: flex;
+  font-size: 1rem;
+  font-weight: 200;
+  border: none;
+  background-color: rgb(var(--background-end-rgb));
+}
+
+._ form div.postFields textarea:focus {
+  outline: none;
+}
+
+._ form div.postFields button {
+  background: rgb(var(--link-rgb));
+  border: none;
+  display: flex;
+  width: 100px;
+  min-width: 80px;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  border-radius: 3px;
+}
+
+._ form div.notice {
+  text-align: center;
+}
+
+._ div.noticeNoAuth {
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 200;
+}
+
+._ form .progressBg {
+  background-color: rgb(var(--link-rgb));
+}
+
+._ form .progressFg {
+  background: conic-gradient(rgba(0,0,0,1) 0%, rgba(138,138,138,0) 75%);
+  background: repeating-conic-gradient(
+    rgba(0,0,0,0) 0%,
+    rgba(255,255,255,0.6) 90%,
+    rgba(255,255,255,1) 100%
+  );
+}
+
+/* Mobile */
+@media screen and (max-width: 700px) {
+  ._ {
+
+  }
+
+  ._ form div.postImages.fullSize div.postImage {
+    width: 100%;
+    height: 50vh;
+  }
+
+  ._ form div.postImages div.postImage {
+    height: 100px;
+  }
+}

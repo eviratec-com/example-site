@@ -1,0 +1,216 @@
+._ {
+  background-color: rgba(var(--background-end-rgb), 1);
+  color: rgb(var(--foreground-rgb));
+  padding: 0;
+  border: 1px solid rgba(var(--foreground-rgb), 0.2);
+  border-top-width: 0;
+  border-left-width: 0;
+  border-right-width: 0;
+  box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.25);
+  border-radius: 3px;
+  margin-bottom: 0.5rem;
+  width: 100%;
+}
+
+._ .externalLink {
+  text-decoration: underline;
+  color: rgba(var(--link-rgb), 1);
+}
+
+._ .postLink {
+  margin-bottom: 0;
+  line-height: 1;
+}
+
+._ section.postImages {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  padding: 0.25rem;
+  background-color: rgba(0,0,0, 1);
+  margin: 0;
+}
+
+._ section.postImages div.postImage {
+  display: flex;
+  width: 50%;
+  padding: 0.25rem;
+  position: relative;
+  aspect-ratio: 4/3;
+}
+
+._ section.postImages.fullSize div.postImage {
+  width: 100%;
+}
+
+._ section.postImages.fullSize div.postImage.wideImage {
+  aspect-ratio: 16/9;
+}
+
+._ section.postImages div.postImage > div,
+._ section.postImages div.postImage figure {
+  display: flex;
+  position: relative;
+  flex: 1;
+  background-color: rgba(var(--foreground-rgb), 0.1);
+}
+
+._ section.postImages div.postImage .progressBg {
+  background-color: #000;
+}
+
+._ section.postImages div.postImage .progressFg {
+  display: block;
+  background: conic-gradient(rgba(0,0,0,1) 0%, rgba(var(--link-rgb),0) 75%);
+  background: repeating-conic-gradient(
+    rgba(0,0,0,0) 0%,
+    rgba(var(--link-rgb),0.6) 90%,
+    rgba(var(--link-rgb),1) 100%
+  );
+}
+
+._ header.postHeader,
+._ footer.postFooter {
+  font-weight: 200;
+  font-size: 0.8rem;
+}
+
+._ header.postHeader {
+  padding: 0.8rem 1rem 0.6rem;
+}
+
+._ header.postHeader h2 {
+  font-size: 1.2rem;
+  font-weight: 300;
+  line-height: 1.1;
+  margin-bottom: 0.4rem;
+}
+
+._ header.postHeader div.headerLinks {
+  display: none;
+  flex-direction: row;
+  line-height: 1;
+  margin-top: 0.25rem;
+}
+
+._ header.postHeader div.headerLinks > * {
+  margin-right: 0.25rem;
+}
+
+._ footer.postFooter {
+  font-size: 0.8rem;
+  color: rgba(var(--foreground-rgb), 0.5);
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  margin-bottom: 0;
+  padding: 0.5rem 0.8rem;
+  background-color: rgba(var(--background-start-rgb), 0.25);
+}
+
+._ footer.postFooter div.commentButtons {
+  position: absolute;
+  bottom: 4px;
+  right: 0.75rem;
+}
+
+._ footer.postFooter div.commentButtons button.toggleCommentForm {
+  height: 26px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 0 0.4rem;
+  font-size: 0.9rem;
+  line-height: 24px;
+  font-weight: 200;
+  background: linear-gradient(to bottom, #fafafa 0%, #eee 100%);
+  cursor: pointer;
+  margin-left: 0.5rem;
+}
+
+._ section.commentForm {
+  margin: 0;
+  padding-bottom: 0;
+}
+
+._ section.comments {
+  border-top: 4px solid rgba(var(--foreground-rgb), 0.25);
+  margin: 0rem;
+  padding: 0.5rem 1rem 1.5rem;
+  background-color: #fafafa;
+}
+
+._ section.comments div.comment {
+  border-top: 4px solid rgba(var(--foreground-rgb), 0.25);
+  margin-top: 1rem;
+}
+
+._ div.loadingReplies,
+._ div.noticeNoReplies {
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 200;
+}
+
+._ div.loadingReplies > * {
+  margin: 0 0.5rem;
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  ._ {
+
+  }
+
+  ._ footer.postFooter div.commentButtons button.toggleCommentForm {
+    border: 1px solid #333;
+    background: linear-gradient(to bottom, #222 0%, #111 100%);
+  }
+
+  ._ section.comments {
+    background-color: #1a1a1a;
+  }
+}
+
+
+/* Mobile */
+@media screen and (max-width: 700px) {
+  ._ {
+    border-radius: 0;
+  }
+
+  ._ section.postImages.fullSize div.postImage {
+    width: 100%;
+  }
+
+  ._ section.postImages.fullSize div.postImage.wideImage {
+
+  }
+
+  ._ section.postImages div.postImage {
+
+  }
+}
+
+/* landscape mobile */
+@media screen and (max-width: 700px) and (orientation: landscape) {
+  ._ {
+
+  }
+
+  ._ section.postImages.fullSize div.postImage {
+
+  }
+
+  ._ section.postImages.fullSize div.postImage.wideImage {
+
+  }
+
+  ._ section.postImages div.postImage {
+
+  }
+}

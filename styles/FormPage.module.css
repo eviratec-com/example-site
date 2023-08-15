@@ -1,0 +1,22 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 6rem;
+  min-height: 100vh;
+  background: rgb(var(--background-end-rgb));
+}
+
+/* Mobile */
+@media screen and (max-width: 700px) {
+  .main {
+    padding: 2rem 0rem 2rem;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .main {
+
+  }
+}

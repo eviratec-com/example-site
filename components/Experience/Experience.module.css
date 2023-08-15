@@ -1,0 +1,26 @@
+._ {
+  background-color: transparent;
+  display: flex;
+  flex-direction: row;
+  margin: 0 -1rem;
+  flex-wrap: wrap;
+}
+
+._ .job {
+  display: flex;
+  width: 33.33%;
+  align-items: stretch;
+  justify-content: stretch;
+}
+
+/* Mobile */
+@media screen and (max-width: 700px) {
+  ._ {
+    flex-direction: column;
+    margin: 0;
+  }
+
+  ._ .job {
+    width: 100%;
+  }
+}

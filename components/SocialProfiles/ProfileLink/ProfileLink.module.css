@@ -1,0 +1,55 @@
+._ {
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+.logo {
+  height: 32px;
+  width: 40px;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.logo.linkedin {
+  background-image: url('/i/social/linkedin.png');
+}
+
+.logo.facebook {
+  background-image: url('/i/social/facebook.png');
+}
+
+.logo.twitter {
+  background-image: url('/i/social/twitter.svg');
+}
+
+.logo.github {
+  background-image: url('/i/social/github-dm.svg');
+}
+
+.service {
+  font-size: 0.9rem;
+  color: rgba(var(--text-rgb), 0.5);
+  font-weigt: 200;
+}
+
+.screen-name {
+  font-size: 3vh;
+
+}
+
+/* Light Mode */
+@media (prefers-color-scheme: light) {
+  .logo.github {
+    background-image: url('/i/social/github-lm.svg');
+  }
+}
+
+
+/* Mobile */
+@media screen and (max-width: 700px) {
+  ._ {
+
+  }
+}

@@ -1,0 +1,74 @@
+._ {
+  background-color: rgb(var(--background-end-rgb));
+}
+
+._ header.messageHeader {
+  padding: 1rem 1rem 0.25rem;
+  font-size: 0.8rem;
+  font-weight: 200;
+  opacity: 0.8;
+}
+
+._ section.messageBody {
+  padding: 0rem 1rem 0.25rem;
+}
+
+._ section.messageBody p {
+  font-weight: 300;
+}
+
+._ section.postImages {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  padding: 0;
+  background-color: rgba(var(--background-start-rgb), 1);
+  margin: 0.75rem -1rem 0.75rem;
+}
+
+._ section.postImages div.postImage {
+  display: flex;
+  width: 50%;
+  padding: 0;
+  aspect-ratio: 4/3;
+  position: relative;
+}
+
+._ section.postImages.fullSize div.postImage {
+  width: 100%;
+}
+
+._ section.postImages.fullSize div.postImage.wideImage {
+  aspect-ratio: 16/9;
+}
+
+._ section.postImages div.postImage div {
+  display: flex;
+  position: relative;
+  flex: 1;
+  background-color: rgba(var(--foreground-rgb), 0.1);
+}
+
+._ footer.messageFooter {
+  padding: 0 1rem 1rem;
+  font-size: 0.7rem;
+  font-weight: 200;
+  opacity: 0.4;
+}
+
+/* Mobile */
+@media screen and (max-width: 700px) {
+  ._ {
+
+  }
+
+  ._ section.postImages.fullSize div.postImage {
+    width: 100%;
+  }
+
+  ._ section.postImages div.postImage {
+
+  }
+}

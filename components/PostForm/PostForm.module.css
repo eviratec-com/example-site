@@ -1,0 +1,232 @@
+._ {
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: stretch;
+  width: 100%;
+}
+
+._ div.tabButtons {
+  background-color: rgba(var(--toolbar-rgb), 1);
+  border-bottom: 4px solid rgb(var(--link-rgb));
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  color: #fff;
+}
+
+._ div.tabButtons span.tabButton {
+  padding: 0 1rem;
+  line-height: 2rem;
+  display: flex;
+  cursor: pointer;
+}
+
+._ div.tabButtons span.tabButton.activeTab {
+  background-color: rgb(var(--link-rgb));
+  color: #fff;
+}
+
+._ form {
+  flex: 1;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: stretch;
+}
+
+._ form div.postFields {
+  flex: 1;
+  background-color: transparent;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: stretch;
+  padding: 0.8rem 1rem;
+}
+
+._ form div.postFields div.inputFields {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+}
+
+._ form div.postFields div.inputFields input,
+._ form div.postFields div.inputFields textarea {
+  flex: 1;
+  display: flex;
+  font-size: 1rem;
+  font-weight: 200;
+  border: none;
+  background-color: rgb(var(--background-end-rgb));
+}
+
+._ form div.postFields div.inputFields input {
+}
+
+._ form div.postFields div.inputFields textarea {
+}
+
+._ form div.postFields div.inputFields input:focus,
+._ form div.postFields div.inputFields textarea:focus {
+  outline: none;
+}
+
+._ form div.postFields button {
+  background: rgb(var(--link-rgb));
+  border: none;
+  display: flex;
+  width: 100px;
+  min-width: 80px;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+._ form .progressBg {
+  background-color: rgb(var(--link-rgb));
+}
+
+
+._ form .progressFg {
+  background: conic-gradient(rgba(0,0,0,1) 0%, rgba(138,138,138,0) 75%);
+  background: repeating-conic-gradient(
+    rgba(0,0,0,0) 0%,
+    rgba(255,255,255,0.6) 90%,
+    rgba(255,255,255,1) 100%
+  );
+}
+
+._ form div.postImages {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  padding: 0.25rem;
+  background-color: rgba(var(--background-start-rgb), 1);
+}
+
+._ form div.postImages div.postImage {
+  display: flex;
+  width: 50%;
+  padding: 0.25rem;
+  aspect-ratio: 4/3;
+  position: relative;
+}
+
+._ form div.postImages.fullSize div.postImage {
+  width: 100%;
+}
+
+._ form div.postImages div.postImage.wideImage {
+  aspect-ratio: 16/9;
+}
+
+._ form div.postImages div.postImage div {
+  display: flex;
+  position: relative;
+  flex: 1;
+  background-color: rgba(var(--foreground-rgb), 0.1);
+}
+
+._ form div.imageUploader {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+._ form div.imageUploader div.uploaderForm {
+  display: flex;
+  flex-direction: row;
+  padding: 1rem;
+  position: relative;
+}
+
+._ form div.imageUploader div.uploaderForm div.instructions {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(var(--link-alt-rgb), 1);
+  font-weight: 300;
+  text-align: center;
+  line-height: 1.2;
+}
+
+._ form div.imageUploader div.uploaderForm div.instructions span.limit {
+  font-weight: 200;
+  font-size: 0.9rem;
+}
+
+._ form div.imageUploader div.uploaderForm input.fileUpload {
+  padding: 2rem;
+  border: 4px dashed rgba(var(--foreground-rgb), 0.15);
+  border-radius: 1rem;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-indent: -999px;
+  display: flex;
+  flex: 1;
+  position: relative;
+  z-index: 2;
+  cursor: pointer;
+  transition: all 333ms;
+}
+
+._ form div.imageUploader div.uploaderForm input.fileUpload:hover,
+._ form div.imageUploader div.uploaderForm input.fileUpload:active {
+  border-color: rgba(var(--link-rgb), 0.75);
+}
+
+._ form div.imageUploader div.uploaderForm input.fileUpload::file-selector-button {
+  display: none;
+}
+
+._ form div.imageUploader div.uploaderForm input.fileUpload:hover,
+._ form div.imageUploader div.uploaderForm input.fileUpload:active {
+  border: 4px dashed rgba(var(--link-rgb), 1);
+}
+
+._ form div.fileList {
+  display: flex;
+  flex-direction: row;
+  padding: 0.25rem;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+._ form div.notice {
+  text-align: center;
+}
+
+/* Mobile */
+@media screen and (max-width: 700px) {
+  ._ {
+
+  }
+
+  ._ form div.postImages.fullSize div.postImage {
+    width: 100%;
+  }
+
+  ._ form div.postImages div.postImage {
+
+  }
+}

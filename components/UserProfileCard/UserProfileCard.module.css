@@ -1,0 +1,138 @@
+._ {
+  background-color: rgb(var(--background-end-rgb));
+}
+
+._ header {
+  border-bottom: 1px solid rgba(var(--foreground-rgb),0.25);
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: center;
+  padding: 0.75rem;
+  box-sizing: border-box;
+}
+
+._ header div.avatarWrapper {
+  display: flex;
+  margin-right: 0.5rem;
+}
+
+._ header div.headlineWrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+._ header div.headlineWrapper div.title,
+._ header div.headlineWrapper div.title h1 {
+  line-height: 1;
+  font-size: 1.2rem;
+  font-weight: 300;
+}
+
+._ header div.headlineWrapper div.title h1 {
+  display: inline-block;
+}
+
+._ header div.headlineWrapper div.title span.username {
+  line-height: 1;
+  font-size: 1.1rem;
+  font-weight: 200;
+  color: rgba(var(--foreground-rgb), 0.5);
+  margin-left: 0.5rem;
+}
+
+._ header div.headlineWrapper div.subtitle {
+  line-height: 1;
+  font-size: 0.8rem;
+  font-weight: 200;
+  margin-top: 0.5rem;
+}
+
+._ section.main {
+
+}
+
+._ section.main ul.attributes {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+._ section.main ul.attributes li.attribute {
+  display: flex;
+  flex-direction: row;
+  font-size: 0.9rem;
+  font-weight: 300;
+  box-sizing: border-box;
+  width: 100%;
+  align-items: stretch;
+  justify-content: stretch;
+}
+
+._ section.main ul.attributes li.attribute > div {
+  flex: 1;
+}
+
+._ section.main ul.attributes li.attribute.wide {
+  width: 100%;
+}
+
+._ section.main ul.attributes li.attribute.addFieldBtnWrapper {
+  align-items: center;
+  justify-content: center;
+  min-height: 38px;
+  max-height: 50px;
+  color: rgb(var(--link-rgb));
+  text-decoration: underline;
+}
+
+._ section.main ul.attributes li.attribute.addFieldBtnWrapper:hover {
+  cursor: pointer;
+  background-color: rgba(var(--foreground-rgb), 0.1);
+}
+
+._ footer {
+  height: 20px;
+}
+
+/* Light mode only */
+@media (prefers-color-scheme: light) {
+  ._ {
+
+  }
+}
+
+/* dark mode only */
+@media (prefers-color-scheme: dark) {
+  ._ {
+
+  }
+}
+
+/* Mobile */
+@media screen and (max-width: 700px) {
+  ._ {
+
+  }
+}
+
+/* portrait mobile */
+@media screen and (max-width: 700px) and (orientation: portrait) {
+  ._ {
+
+  }
+
+  ._ section.main ul.attributes li.attribute {
+    width: 100%;
+  }
+}
+
+/* landscape mobile */
+@media screen and (max-width: 700px) and (orientation: landscape) {
+  ._ {
+
+  }
+}

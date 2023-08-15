@@ -1,0 +1,57 @@
+._ {
+  height: 32px;
+  width: 32px;
+}
+
+._ .circle {
+  height: 32px;
+  width: 32px;
+  border-radius: 999px;
+  background: conic-gradient(rgba(var(--link-rgb),1) 0%, rgba(138,138,138,0) 75%);
+  position: relative;
+  animation: 2s linear 0s infinite  spin;
+  transform: rotate(0deg);
+  background: repeating-conic-gradient(
+    rgba(var(--background-start-rgb), 0) 0%,
+    rgba(var(--link-rgb),0.6) 90%,
+    rgba(var(--link-rgb),1) 100%
+  );
+}
+
+._ .circle div {
+  height: 70%;
+  width: 70%;
+  position: absolute;
+  top: 15%;
+  left: 15%;
+  background-color: #fff;
+  border-radius: 999px;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  ._ {
+
+  }
+
+  ._ .circle div {
+    background-color: #000;
+  }
+}
+
+/* Mobile */
+@media screen and (max-width: 700px) {
+  ._ {
+
+  }
+}
